@@ -1,12 +1,26 @@
 from db import db
+from bson.objectid import ObjectId
 
 # database collections
 data = db.data
 entities = db.entities
 
-# get_data()
-# get_data_from_source()
-# get_data_from_buisiness()
-# insert_data()
-# update_data()
-# delete_data()
+
+def get_posts():
+    return entities.find()
+
+
+def get_post(post_id):
+    return entities.find_one({'_id': ObjectId(post_id)})
+
+
+def insert_post(post_data):
+    return entities.insert(post_data)
+
+
+def insert_posts(posts_data):
+    return entities.insert_many(posts_data)
+
+
+def delete_post(post_id):
+    return entities.delete_one({'_id': ObjectId(post_id)})
