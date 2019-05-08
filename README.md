@@ -2,7 +2,7 @@
 
 Description of repository
 
-###How to run
+### How to run
 
 Install MongoDB and run mongod process on default port (https://docs.mongodb.com/manual/installation/): mongod
 
