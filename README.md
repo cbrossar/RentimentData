@@ -1,6 +1,6 @@
 # RentimentData
 
-Description of repository
+Use data from reddit, twitter, news articles, etc. to construct sentiment and popularity of a particular stock or crypto currency. 
 
 ### How to run
 
