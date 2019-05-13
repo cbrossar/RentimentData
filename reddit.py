@@ -23,3 +23,12 @@ def get_investing_posts():
 
         for submission in subreddit.hot(limit=10):
             print(submission.title)
+
+def get_post1():
+    post_data = {'source': 'Reddit', 'author': 'Bob', 'content': 'Bitcoin sucks', 'type': 'post'}
+    return post_data
+
+
+def get_post2():
+    post_data = {'source': 'Reddit', 'author': 'Joe', 'content': 'Bitcoin is going to the moon', 'type': 'post'}
+    return post_data
