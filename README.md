@@ -1,8 +1,8 @@
 # RentimentData
 
-Description of repository   
+Use data from reddit, twitter, news articles, etc. to construct sentiment and popularity of a particular stock or crypto currency. 
 
-###How to run
+### How to run
 
 Install MongoDB and run mongod process on default port (https://docs.mongodb.com/manual/installation/): mongod
 
