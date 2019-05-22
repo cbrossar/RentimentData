@@ -1,10 +1,11 @@
 import re
 import nltk
 from nltk.tag import pos_tag, map_tag
+from config import *
 
 def build_sentiment_dictionary():
     sentiwords_dict = {}
-    sentiwords = open('config/sentiwords.txt', 'r')
+    sentiwords = open(FILES['sentiment_dict'], 'r')
     for line in sentiwords.readlines():
         pos = re.findall('#[a-z]', line)
         columns = re.split('#[a-z]', line.replace('\n', '').replace('\t', ''))
