@@ -1,35 +1,34 @@
-# from sentiment import analyze sentiment
 import praw
-from config import *
+from api import *
 
 reddit = praw.Reddit('bot1', user_agent='bot1 user agent')
 
 
-def get_crypto_posts():
+def get_reddit_posts(subreddits):
 
-    for sub in REDDIT_CONFIG['crypto_subreddits']:
+    post_data = []
+
+    for sub in subreddits:
         subreddit = reddit.subreddit(sub)
-        print("\n" + subreddit.display_name)
 
-        for submission in subreddit.hot(limit=10):
-            print(submission.title)
+        for submission in subreddit.new(limit=1000):
 
+            if get_post_by_source_id(submission.id) is None:
 
-def get_investing_posts():
+                post = dict(id=submission.id,
+                            source='reddit',
+                            sub_source=subreddit.display_name,
+                            author=submission.author.name if submission.author is not None else None,
+                            title=submission.title,
+                            text=submission.selftext,
+                            content_type='post',
+                            sentiment=0,
+                            score=submission.score,
+                            upvote_ratio=submission.upvote_ratio,
+                            num_comments=submission.num_comments,
+                            parent=None,
+                            publish_date=submission.created_utc)
 
-    for sub in REDDIT_CONFIG['investing_subreddits']:
-        subreddit = reddit.subreddit(sub)
-        print("\n" + subreddit.display_name)
+                post_data.append(post)
 
-        for submission in subreddit.hot(limit=10):
-            print(submission.title)
-
-
-def get_post1():
-    post_data = {'source': 'Reddit', 'author': 'Bob', 'content': 'Bitcoin sucks', 'type': 'post'}
-    return post_data
-
-
-def get_post2():
-    post_data = {'source': 'Reddit', 'author': 'Joe', 'content': 'Bitcoin is going to the moon', 'type': 'post'}
     return post_data

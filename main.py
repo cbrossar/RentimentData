@@ -1,24 +1,19 @@
 from reddit import *
 from api import *
+from config import *
 
-
-get_crypto_posts()
-get_investing_posts()
-
-print('\n---------------\n')
 
 print('Get posts from reddit...')
-post1 = get_post1()
-post2 = get_post2()
+posts_data = get_reddit_posts(REDDIT_CONFIG['crypto_subreddits'])
 
-print('Send post data to mongo...')
-insert_post(post1)
-insert_post(post2)
+print('Insert posts into mongo...')
+insert_posts(posts_data)
 
 print('Get posts from mongo...')
 posts = get_posts()
+#
+# print('Posts:')
+# for post in posts:
+#     print(post)
+#     delete_post(post['_id'])
 
-print('Posts:')
-for post in posts:
-    print(post)
-    delete_post(post['_id'])
