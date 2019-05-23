@@ -3,6 +3,7 @@ import nltk
 from nltk.tag import pos_tag, map_tag
 from config import *
 
+
 def build_sentiment_dictionary():
     sentiwords_dict = {}
     sentiwords = open(FILES['sentiment_dict'], 'r')
@@ -15,6 +16,7 @@ def build_sentiment_dictionary():
             sentiwords_dict[columns[0]][pos[0]] = float(columns[1])
     return sentiwords_dict
 
+
 def lookup_sentiment_score(word, part_of_speech, sentiment_dict):
     if word in sentiment_dict:
         options = sentiment_dict[word]
@@ -22,6 +24,7 @@ def lookup_sentiment_score(word, part_of_speech, sentiment_dict):
         if pos_simple in options:
             return sentiment_dict[word][pos_simple]
     return 0
+
 
 def get_sentiment_score(string, sentiment_dict):
     sentiment = 0
