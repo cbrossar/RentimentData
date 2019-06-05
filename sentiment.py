@@ -3,6 +3,10 @@ import nltk
 from nltk.tag import pos_tag, map_tag
 from config import *
 
+nltk.download('punkt')
+nltk.download('universal_tagset')
+nltk.download('averaged_perceptron_tagger')
+
 
 def build_sentiment_dictionary():
     sentiwords_dict = {}
