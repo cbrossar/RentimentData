@@ -1,14 +1,18 @@
 import praw
 from api import get_post_by_source_id
 from utility import create_reddit_post_dictionary
+import logging
+
+logger = logging.getLogger('Rentiment.' + __name__)
 
 reddit = praw.Reddit('bot1', user_agent='bot1 user agent')
 
 
 def get_reddit_posts(subreddits, count=1000):
 
-    post_data = []
+    logger.debug('Searching the following subreddits ' + str(subreddits))
 
+    post_data = []
     for sub in subreddits:
         subreddit = reddit.subreddit(sub)
 

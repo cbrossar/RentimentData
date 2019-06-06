@@ -1,2 +1,8 @@
 #praw
 praw.ini
+
+#logs
+*.log
+
+#venv
+venv/*

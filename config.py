@@ -5,5 +5,5 @@ REDDIT_CONFIG = dict(crypto_subreddits=['CryptoCurrency', 'CryptocurrencyICO', '
                      investing_subreddits=['investing', 'wallstreetbets', 'stocks'],
                      test_subreddits=['investing'])
 
-FILES = dict(sentiment_dict='config/sentiwords.txt')
+FILES = dict(sentiment_dict='files/sentiwords.txt')
 
