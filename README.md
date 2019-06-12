@@ -6,7 +6,8 @@ Use data from reddit, twitter, news articles, etc. to construct sentiment and po
 ### How to run
 
 Install MongoDB and run mongod process on default port (https://docs.mongodb.com/manual/installation/): mongod
-(Need to change above with heroku host)
+
+Heroku!
 
 Install a python venv in base directory populated with requirements.text:
 pip install -r requirements.txt
@@ -18,7 +19,5 @@ Run main: python main.py
 
 I had to install punkt, universal_tagset, and averaged_perceptron_tagger for nltk to work via this command:
  nltk.download('punkt')
-
-Fix GPG key
 
 
