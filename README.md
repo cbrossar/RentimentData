@@ -19,6 +19,6 @@ Run main: python main.py
 I had to install punkt, universal_tagset, and averaged_perceptron_tagger for nltk to work via this command:
  nltk.download('punkt')
 
-
+Fix GPG key
 
 
