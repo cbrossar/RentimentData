@@ -5,7 +5,7 @@
     "ge": [],
     "bac": [],
     "et": [],
-    "aapl": [],
+    "aapl": ["apple", "iphone"],
     "nok": [],
     "csco": [],
     "f": [],
@@ -34,6 +34,7 @@
     "wmt": [],
     "jblu": [],
     "twtr": [],
+    "lulu": ["lululemon"]
   },
   "cryptos": {
     "btc": ["bitcoin"],
@@ -52,7 +53,7 @@
     "dash": ["dash"],
     "miota": ["iota"],
     "atom": ["cosmos"],
-    "doge": ["dogecoin", "doge coin"],
-    "enj": ["enjin", "enjin coin"]
+    "doge": ["dogecoin"],
+    "enj": ["enjin"]
   }
 }

@@ -35,7 +35,7 @@ def write_and_update_posts(recent_posts_data, existing_posts_data):
     insert_posts(posts_to_update)
 
 
-recent_posts_data = get_reddit_posts(REDDIT_CONFIG['test_subreddits'], 100)
+recent_posts_data = get_reddit_posts(REDDIT_CONFIG['test_subreddits'], 20)
 recent_ids = [post['id'] for post in recent_posts_data]
 existing_posts_data = get_posts_by_source_id(recent_ids)
 
