@@ -9,15 +9,12 @@ logger = logging.getLogger('Rentiment.' + __name__)
 
 reddit = praw.Reddit(client_id=PRAW_CLIENT_ID, client_secret=PRAW_SECRET, user_agent='bot1 user agent')
 
-def get_reddit_posts(subreddits, count=1000, subject='cryptos'):
+def get_reddit_posts(subreddits, count=1000):
 
     logger.debug('Searching the following subreddits ' + str(subreddits))
 
     # Build sentiment dictionary here so we don't build it for every posts
     sentiment_dict = build_sentiment_dictionary()
-
-    with open('./files/subjects.json') as f:
-        target_subjects = json.load(f)[subject]
 
     post_data = []
     for sub in subreddits:
