@@ -20,9 +20,6 @@ write_and_update_posts(posts_data, existing_ids)
 logger.info('Get posts from mongo...')
 posts = get_posts()
 
-logger.debug('Posts:')
-for post in posts:
-    logger.debug(post)
 
 start = datetime(2019, 6, 2, 0, 0, 0)
 end = datetime(2019, 7, 1, 0, 0, 0)
@@ -33,4 +30,4 @@ posts = get_posts_by_subreddit('Bitcoin')
 
 # plot('Rentiment Bitcoin', 'publish_date', 'text_sentiment', posts)
 
-# plot_by_hour('Rentiment Bitcoin', 'publish_date', posts)
+plot_by_hour('Rentiment Bitcoin', 'publish_date', posts)
