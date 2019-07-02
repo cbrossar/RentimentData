@@ -29,6 +29,10 @@ def get_posts_by_date_range(start, end):
     return posts.find({'publish_date': {'$lt': end, '$gte': start}})
 
 
+def get_posts_by_subreddit(subreddit):
+    return posts.find({'sub_source': subreddit})
+
+
 def insert_post(post_data):
     if post_data:
         return posts.insert(post_data)
