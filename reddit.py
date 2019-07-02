@@ -1,24 +1,27 @@
 import praw
-from api import get_post_by_source_id
+from config import *
 from utility import create_reddit_post_dictionary
+from sentiment import build_sentiment_dictionary
 import logging
+import json
 
 logger = logging.getLogger('Rentiment.' + __name__)
 
-reddit = praw.Reddit('bot1', user_agent='bot1 user agent')
-
+reddit = praw.Reddit(client_id=PRAW_CLIENT_ID, client_secret=PRAW_SECRET, user_agent='bot1 user agent')
 
 def get_reddit_posts(subreddits, count=1000):
 
     logger.debug('Searching the following subreddits ' + str(subreddits))
+
+    # Build sentiment dictionary here so we don't build it for every posts
+    sentiment_dict = build_sentiment_dictionary()
 
     post_data = []
     for sub in subreddits:
         subreddit = reddit.subreddit(sub)
 
         for submission in subreddit.new(limit=count):
-            if get_post_by_source_id(submission.id) is None:
-                post = create_reddit_post_dictionary(submission, subreddit)
-                post_data.append(post)
+            post = create_reddit_post_dictionary(submission, subreddit, sentiment_dict)
+            post_data.append(post)
 
     return post_data

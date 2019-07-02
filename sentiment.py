@@ -3,9 +3,9 @@ import nltk
 from nltk.tag import pos_tag, map_tag
 from config import *
 
-nltk.download('punkt')
-nltk.download('universal_tagset')
-nltk.download('averaged_perceptron_tagger')
+
+def tokenize(string):
+    return nltk.word_tokenize(string)
 
 
 def build_sentiment_dictionary():
@@ -32,7 +32,7 @@ def lookup_sentiment_score(word, part_of_speech, sentiment_dict):
 
 def get_sentiment_score(string, sentiment_dict):
     sentiment = 0
-    tokens = nltk.word_tokenize(string)
+    tokens = tokenize(string)
     parts_of_speech = nltk.pos_tag(tokens)
     simplified_tags = [(word, map_tag('en-ptb', 'universal', tag)) for word, tag in parts_of_speech]
     for token in simplified_tags:
