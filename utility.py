@@ -1,6 +1,7 @@
 from config import CRYPTO_SYMBOLS
-from sentiment import build_sentiment_dictionary, get_sentiment_score, tokenize
+from sentiment import get_sentiment_score, tokenize
 from datetime import datetime
+
 
 def get_target_subjects(tokens):
     targets = []
