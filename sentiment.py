@@ -32,9 +32,17 @@ def lookup_sentiment_score(word, part_of_speech, sentiment_dict):
 
 def get_sentiment_score(string, sentiment_dict):
     sentiment = 0
+    num_tokens = 0
     tokens = tokenize(string)
     parts_of_speech = nltk.pos_tag(tokens)
     simplified_tags = [(word, map_tag('en-ptb', 'universal', tag)) for word, tag in parts_of_speech]
     for token in simplified_tags:
-        sentiment += lookup_sentiment_score(token[0], token[1], sentiment_dict)
+        sentiment_score = lookup_sentiment_score(token[0], token[1], sentiment_dict)
+        sentiment += sentiment_score
+        if sentiment_score != 0:
+            num_tokens += 1
+
+    if num_tokens > 0:
+        return sentiment / num_tokens
+        
     return sentiment

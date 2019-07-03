@@ -5,6 +5,7 @@ from sentiment import build_sentiment_dictionary
 import logging
 import json
 
+
 logger = logging.getLogger('Rentiment.' + __name__)
 reddit = praw.Reddit(client_id=PRAW_CLIENT_ID, client_secret=PRAW_SECRET, user_agent='bot1 user agent')
 
