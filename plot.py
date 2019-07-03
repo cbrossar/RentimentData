@@ -24,7 +24,7 @@ def plot_by_hour(title, y_label, posts):
     hour_count = dict()
 
     for post in posts:
-        post_time = post[y_label].replace(minute=0, second=0)
+        post_time = post[y_label].replace(hour=0, minute=0, second=0)
         if post_time in hour_count:
             hour_count[post_time] += 1
         else:

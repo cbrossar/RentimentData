@@ -11,14 +11,28 @@ REDDIT_CONFIG = dict(crypto_subreddits=['CryptoCurrency', 'CryptocurrencyICO', '
                      bitcoin_subreddits=['Bitcoin', 'BitcoinMarkets'],
                      ethereum_subreddits=['ethtrader', 'ethereum'],
                      investing_subreddits=['investing', 'wallstreetbets', 'stocks'],
-                     all_subreddits=['CryptoCurrency', 'CryptocurrencyICO', 'CryptoMarkets', 'investing', 'Bitcoin',
-                                     'BitcoinMarkets', 'ethtrader', 'ethereum', 'wallstreetbets', 'stocks'],
+                     large_cryptos=['CryptoCurrency', 'CryptocurrencyICO', 'CryptoMarkets', 'investing', 'Bitcoin',
+                                    'BitcoinMarkets', 'ethtrader', 'ethereum', 'wallstreetbets', 'stocks', 'litecoin'],
+                     small_cryptos=['XRP', 'LitecoinMarkets', 'CoinBase', 'eos', 'Stellar', 'etc',
+                                    'Bitcoincash', 'LINKTrader', 'EthereumClassic', 'zec', 'BATProject', 'OxProject'],
                      test_subreddits=['CryptoMarkets'])
 
 CRYPTO_SYMBOLS = dict(crypto=['crypto', 'cryptocurrency'],
                       btc=['btc', 'bitcoin'],
                       eth=['eth', 'ethereum'],
-                      ltc=['ltc', 'litecoin'])
+                      xrp=['xrp', 'ripple'],
+                      ltc=['ltc', 'litecoin'],
+                      bch=['bch', 'bitcoin cash'],
+                      eos=['eos'],
+                      xlm=['xlm', 'stellar lumens', 'stellar'],
+                      link=['link', 'chainlink'],
+                      etc=['etc', 'ethereum classic'],
+                      zec=['zec', 'zcash'],
+                      bat=['bat', 'basic attention coin'],
+                      usdc=['usdc', 'usd coin'],
+                      zrx=['zrx', 'ox'],
+                      rep=['rep', 'angur'],
+                      dai=['dai'])
 
 
 BIZ_SYMBOLS = dict(amzn=['amzn', 'amazon'],

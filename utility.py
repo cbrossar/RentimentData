@@ -3,18 +3,19 @@ from sentiment import get_sentiment_score, tokenize
 from datetime import datetime
 
 
-def get_target_subjects(tokens):
+def get_subjects(text):
     targets = []
-    for token in tokens:
-        for key in CRYPTO_SYMBOLS:
-            if token.lower() in CRYPTO_SYMBOLS[key]:
+    for key in CRYPTO_SYMBOLS:
+        for symbol in CRYPTO_SYMBOLS[key]:
+            if symbol in text.lower():
                 targets.append(key)
-    return list(set(targets))
+                continue
+    return list(targets)
 
 
 def create_reddit_post_dictionary(submission, subreddit, sentiment_dict):
 
-    tokens = tokenize(submission.title) + tokenize(submission.selftext)
+    title_and_text = submission.title + " " + submission.selftext
 
     return dict(id=submission.id,
                 source='reddit',
@@ -25,7 +26,7 @@ def create_reddit_post_dictionary(submission, subreddit, sentiment_dict):
                 text=submission.selftext,
                 title_sentiment=get_sentiment_score(submission.title, sentiment_dict),
                 text_sentiment=get_sentiment_score(submission.selftext, sentiment_dict),
-                subjects=get_target_subjects(tokens),
+                subjects=get_subjects(title_and_text),
                 source_score=submission.score,
                 upvote_ratio=submission.upvote_ratio,
                 num_comments=submission.num_comments,
