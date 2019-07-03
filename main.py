@@ -27,7 +27,7 @@ logger.info('Get posts from ' + str(start) + ' to ' + str(end))
 
 # posts = get_posts_by_subreddit('CryptoMarkets')
 posts = get_posts()
-logger.info(posts)
+
 # plot('Rentiment Bitcoin', 'publish_date', 'text_sentiment', posts)
 
 plot_by_hour('Rentiment Bitcoin', 'publish_date', posts)

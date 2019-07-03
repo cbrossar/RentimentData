@@ -11,14 +11,13 @@ reddit = praw.Reddit(client_id=PRAW_CLIENT_ID, client_secret=PRAW_SECRET, user_a
 
 def get_reddit_posts(subreddits, count=1000):
 
-    logger.debug('Searching the following subreddits ' + str(subreddits))
-
     # Build sentiment dictionary here so we don't build it for every posts
     sentiment_dict = build_sentiment_dictionary()
 
     post_data = []
     for sub in subreddits:
         subreddit = reddit.subreddit(sub)
+        logger.info('Searching the following subreddit: ' + str(sub))
 
         for submission in subreddit.new(limit=count):
             post = create_reddit_post_dictionary(submission, subreddit, sentiment_dict)

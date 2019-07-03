@@ -11,10 +11,10 @@ REDDIT_CONFIG = dict(crypto_subreddits=['CryptoCurrency', 'CryptocurrencyICO', '
                      bitcoin_subreddits=['Bitcoin', 'BitcoinMarkets'],
                      ethereum_subreddits=['ethtrader', 'ethereum'],
                      investing_subreddits=['investing', 'wallstreetbets', 'stocks'],
-                     large_cryptos=['CryptoCurrency', 'CryptocurrencyICO', 'CryptoMarkets', 'investing', 'Bitcoin',
+                     large_crypto_subs=['CryptoCurrency', 'CryptocurrencyICO', 'CryptoMarkets', 'investing', 'Bitcoin',
                                     'BitcoinMarkets', 'ethtrader', 'ethereum', 'wallstreetbets', 'stocks', 'litecoin'],
-                     small_cryptos=['XRP', 'LitecoinMarkets', 'CoinBase', 'eos', 'Stellar', 'etc',
-                                    'Bitcoincash', 'LINKTrader', 'EthereumClassic', 'zec', 'BATProject', 'OxProject'],
+                     small_crypto_subs=['XRP', 'LitecoinMarkets', 'CoinBase', 'eos', 'Stellar', 'etc',
+                                    'Bitcoincash', 'LINKTrader', 'EthereumClassic', 'zec', 'BATProject', '0xProject'],
                      test_subreddits=['CryptoMarkets'])
 
 CRYPTO_SYMBOLS = dict(crypto=['crypto', 'cryptocurrency'],
@@ -30,7 +30,7 @@ CRYPTO_SYMBOLS = dict(crypto=['crypto', 'cryptocurrency'],
                       zec=['zec', 'zcash'],
                       bat=['bat', 'basic attention coin'],
                       usdc=['usdc', 'usd coin'],
-                      zrx=['zrx', 'ox'],
+                      zrx=['zrx', '0x'],
                       rep=['rep', 'angur'],
                       dai=['dai'])
 
