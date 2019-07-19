@@ -9,3 +9,8 @@ praw.ini
 
 #venv
 venv/*
+
+#django
+db.sqlite3
+
+.idea/*
