@@ -9,7 +9,7 @@ logger = logging.getLogger('Rentiment.' + __name__)
 
 
 logger.info('Get posts from reddit...')
-posts_data_l = get_reddit_posts(REDDIT_CONFIG['large_crypto_subs'], 500)
+posts_data_l = get_reddit_posts(REDDIT_CONFIG['large_crypto_subs'], 100)
 posts_data_s = get_reddit_posts(REDDIT_CONFIG['small_crypto_subs'], 100)
 
 
